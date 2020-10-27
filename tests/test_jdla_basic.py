@@ -28,6 +28,13 @@ class Test_basic_opea(unittest.TestCase):
         self.assertEqual(basic_operations.division(1, -1), -1)
         self.assertEqual(basic_operations.division(-1, -1), 1)
 
+        # self.assertRaises Value expected, method, args
+        self.assertRaises(ValueError, basic_operations.division, 10, 0)
+
+        # Test Exception using context manager
+        with self.assertRaises(ValueError):
+            basic_operations.division(10, 0)
+
 
 if __name__ == '__main__':
     unittest.main()

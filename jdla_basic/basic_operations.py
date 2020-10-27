@@ -51,6 +51,10 @@ def division(a, b):
     Returns:
     int: division result
     """
+
+    if b == 0:
+        raise ValueError('Can not divide by zero')
+
     return a / b
 
 
